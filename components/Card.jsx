@@ -1,15 +1,14 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 
-export function Card() {
+export function Card({ name, image }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hola DHNR!</Text>
+      <Text style={styles.text}>{name}</Text>
       <Image source={require('../assets/favicon.png')} />
       <Image
+        style={styles.image}
         source={{
-          uri: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-          width: 300,
-          height: 300,
+          uri: image,
         }}
       />
     </View>
@@ -18,15 +17,16 @@ export function Card() {
 
 const styles = StyleSheet.create({
   container: {
-    width: '80%',
+    width: '50%',
     backgroundColor: 'lightcyan',
+    padding: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 10,
     overflow: 'hidden',
     elevation: 10,
   },
   image: {
+    borderRadius: 10,
     width: '100%',
     height: undefined,
     aspectRatio: 4 / 4,
