@@ -1,27 +1,25 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView, StatusBar } from 'react-native'
+
+import Card from '../components/Card'
 
 export function HomeScreen() {
   return (
-    <View style={styles.container}> 
-      <Text>Hola DHNR!</Text>
-      <Image source={require('../assets/favicon.png')} />
-      <Image
-        source={{
-          uri: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-          width: 300,
-          height: 300,
-        }}
-      />
-    </View>
+    <ScrollView>
+      <StatusBar backgroundColor="darkorange" />
+      <Text style={styles.text}>Home Screen</Text>
+      <Card />
+      <Card />
+      <Card />
+    </ScrollView>
   )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  text: {
+    fontSize: 20,
+    backgroundColor: 'ghostwhite',
+    color: 'navy',
+    textAlign: 'center',
   },
 })
 
